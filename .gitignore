@@ -1,0 +1,17 @@
+# Ignore Visual Studio files
+*.suo
+*.user
+*.sln
+*.cache
+*.ilk
+*.log
+*.vs
+
+# Ignore build output
+bin/
+obj/
+
+# Ignore ReminderService specific files
+ReminderService/.vs/
+ReminderService/ReminderService/bin/
+ReminderService/ReminderService/obj/
