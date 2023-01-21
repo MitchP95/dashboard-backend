@@ -25,7 +25,7 @@ namespace ReminderService.Controllers
         [HttpPost]
         public IActionResult Post([FromBody] Reminder reminder)
         {
-            this.mySql.Post(reminder);
+            this.mySql.PostReminder(reminder);
             return Ok();
         }
     }

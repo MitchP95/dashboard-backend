@@ -11,7 +11,7 @@ namespace ReminderService.Communication
             this.connectionString = connectionString;
         }
 
-        public void Post(Reminder reminder)
+        public void PostReminder(Reminder reminder)
         {
             using (var connection = new MySqlConnection(connectionString))
             {
@@ -28,6 +28,20 @@ namespace ReminderService.Communication
                 }
             }
             
+        }
+
+        public List<Reminder> GetReminders()
+        {
+            List<Reminder> reminders= new List<Reminder>();
+            using (var connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                var query = "SELECT * FROM reminder";
+
+                // TODO - complete
+            }
+
+            return reminders;
         }
     }
 }
