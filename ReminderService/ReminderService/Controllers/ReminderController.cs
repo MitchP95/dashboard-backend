@@ -19,7 +19,7 @@ namespace ReminderService.Controllers
         [HttpGet(Name = "GetReminders")]
         public IEnumerable<Reminder> Get()
         {
-            return SampleReminders.GetSampleReminders();
+            return this.mySql.GetReminders();
         }
 
         [HttpPost]
