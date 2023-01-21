@@ -38,7 +38,22 @@ namespace ReminderService.Communication
                 connection.Open();
                 var query = "SELECT * FROM reminder";
 
-                // TODO - complete
+                using (var command = new MySqlCommand(query, connection))
+                {
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            var reminder = new Reminder();
+                            reminder.Contributor = reader["contributor"].ToString();
+                            reminder.Description = reader["description"].ToString();
+                            reminder.DateTimeAdded = Convert.ToDateTime(reader["date_time_added"]);
+                            reminder.DateTimeCompleted = Convert.ToDateTime(reader["date_time_completed"]);
+                            reminder.IsComplete = Convert.ToBoolean(reader["is_complete"]);
+                            reminders.Add(reminder);
+                        }
+                    }
+                }
             }
 
             return reminders;
