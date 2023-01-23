@@ -6,7 +6,7 @@ using ReminderService.Fakes;
 namespace ReminderService.Controllers
 {
     [ApiController]
-    [Route("[reminderController]")]
+    [Route("[[reminderController]]")]
     public class ReminderController : ControllerBase
     {
         private ReminderMySQL mySql;

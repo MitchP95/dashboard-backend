@@ -4,10 +4,10 @@ using ReminderService.Fakes;
 namespace ReminderService.Controllers
 {
     [ApiController]
-    [Route("[builtInReminderController]")]
+    [Route("[[builtInReminderController]]")]
     public class BuiltInReminderController : ControllerBase
     {
-        [HttpGet(Name = "GetReminders")]
+        [HttpGet(Name = "GetBuiltInReminders")]
         public IEnumerable<Reminder> Get()
         {
             return SampleReminders.GetSampleReminders();
